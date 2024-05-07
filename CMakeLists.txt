@@ -7,14 +7,14 @@ find_package(SDL2_ttf REQUIRED)
 find_package(spdlog REQUIRED)
 
 file(GLOB_RECURSE SOURCES
-        "src/*.hpp"
-        "src/*.cpp"
+        "Source/*.hpp"
+        "Source/*.cpp"
 )
 
 add_executable(KryogenicV2 ${SOURCES})
 
 set_target_properties(KryogenicV2 PROPERTIES
-        CXX_STANDARD 23
+        CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS OFF
 )
@@ -24,7 +24,7 @@ target_include_directories(KryogenicV2 PRIVATE
         ${SDL2_IMAGE_INCLUDE_DIRS}
         ${SDL2_TTF_INCLUDE_DIRS}
         "include"
-        "src"
+        "Source"
 )
 
 target_link_libraries(KryogenicV2 PRIVATE

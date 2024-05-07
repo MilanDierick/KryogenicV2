@@ -1,6 +1,8 @@
 #ifndef KRYOGENIC_FOUNDATION_TYPES_HPP
 #define KRYOGENIC_FOUNDATION_TYPES_HPP
 
+#include <map>
+
 using i8  = signed char;
 using i16 = signed short;
 using i32 = signed int;
@@ -21,6 +23,7 @@ using b64 = bool;
 
 using isize = i64;
 using usize = u64;
+using byte  = u8;
 
 static_assert(sizeof(i8) == 1, "i8 is not 1 byte.");    // NOLINT(*-magic-numbers)
 static_assert(sizeof(i16) == 2, "i16 is not 2 bytes."); // NOLINT(*-magic-numbers)
@@ -47,7 +50,7 @@ static_assert(sizeof(usize) == 8, "usize is not 8 bytes."); // NOLINT(*-magic-nu
 #include <unordered_map>
 #include <vector>
 
-namespace kryogenic {
+namespace Kryogenic {
 	using cstring = char const*;
 
 	template<typename T>
@@ -58,6 +61,9 @@ namespace kryogenic {
 
 	template<typename K, typename V>
 	using unordered_map = std::unordered_map<K, V>;
+
+	template<typename K, typename V>
+	using multi_map = std::multimap<K, V>;
 } // kryogenic
 
 #endif //KRYOGENIC_FOUNDATION_TYPES_HPP
